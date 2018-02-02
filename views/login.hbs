@@ -1,0 +1,28 @@
+<html>
+    {{> header }}
+    <body class="centered-form">
+        <div class="centered-form__form">
+            <form id="loginForm" method="post">
+                <div class="form-field">
+                    <h3>Login:</h3>
+                </div>
+                <div id="messageBlock">
+                </div>
+                <div class="form-field">
+                    <label>Username</label>
+                    <input type="text" name="username"/>
+                </div>
+                <div class="form-field">
+                    <label>Password</label>
+                    <input type="password" name="password"/>
+                </div>
+                <div class="form-field">
+                    <button id="LoginButton" type="button">Login</button>
+                    <a href="/registration">Register</a>
+                </div>
+            </form>
+        </div>
+        {{> js}}
+        <script src="js/login.js"></script>
+    </body>
+</html>

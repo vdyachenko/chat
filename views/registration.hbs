@@ -1,0 +1,27 @@
+<html>
+    {{> header }}
+    <body class="centered-form">
+        <div class="centered-form__form">
+            <form method="post" action="/registration">
+                <div class="form-field">
+                    <h3>Registration:</h3>
+                </div>
+                <div id="messageBlock">
+                </div>
+                <div class="form-field">
+                    <label>Username: <span style="color:red;">*</span></label>
+                    <input type="text" name="username" />
+                </div>
+                <div class="form-field">
+                    <label>Password: <span style="color:red;">*</span></label>
+                    <input type="password" name="password" />
+                </div>
+                <div class="form-field">
+                    <button id="registerButton" type="button">Register</button>
+                </div>
+            </form>
+        </div>
+        {{> js}}
+        <script src="js/registration.js"></script>
+    </body>
+</html>

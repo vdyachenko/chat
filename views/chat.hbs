@@ -1,0 +1,34 @@
+<html>
+    {{> header }}
+    <body class="chat">
+        <div class="chat__sidebar">
+            <h3>People</h3>
+            <div id="users"></div>
+        </div>
+        <div class="chat__main">
+        <ol id="chatBlock" class="chat__messages">
+            {{#each messages}}
+            <li>
+                <p>
+                    {{#if this.fileLink}}
+                        <b>{{this.user.username}}:</b> <span style="font-size: 12px;color:grey;">{{this.createdAt}}</span><br/><a href="download?file={{this.fileLink}}" target="_blank">{{this.text}}</a>
+                    {{else}}
+                        <b>{{this.user.username}}:</b> <span style="font-size: 12px;color:grey;">{{this.createdAt}}</span><br/> {{this.text}}
+                    {{/if}}
+                </p>
+            </li>
+            {{/each}}
+        </ol>
+
+        <div class="chat__footer">
+            <input name="message" id="userMessage" type="text" placeholder="Message" autofocus autocomplete="off"/>
+            <input type="hidden" value='{{currentUser.username}}' id="userUsername" />
+            <input type="file" id="fileUpload" name="uploadedFile" style="display: none;" />
+            <button id="uploadFile">Upload file</button>
+        </div>
+    </div>
+        {{> js }}
+        <script src="js/chat.js"></script>
+        <script src="js/libs/delivery.js"></script>
+    </body>
+</html>
